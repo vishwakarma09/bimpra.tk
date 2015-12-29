@@ -1,0 +1,158 @@
+<?php
+class bimpra{
+	private $CI;
+	
+	public function __construct(){
+		$this->CI =& get_instance();
+    $this->CI->load->database();
+	}
+	
+	public function login($email, $password){
+		if($this->users->load("email = ? and password = ?", array($email, $password))){
+			$_SESSION['authUser'] = $email;
+			return true;
+		}
+		return false;
+	}
+	
+	public function sessionCheck(){
+		if(isset($_SESSION['authUser'])) return true;
+		else return false;
+	}
+	
+	public function validatePostCreation($postvars){
+		if(!isset($postvars['title']) || !isset($postvars['slug']) || !isset($postvars['thumb']) || !isset($postvars['isfeatured']) || !isset($postvars['region']) || !isset($postvars['content'])){
+			return false;
+		}
+		return true;
+	}
+	
+	public function savePostCreation($postvars){
+		if($postvars['isfeatured']=='on') $isfeatured	=1;
+		else $isfeatured = 0;
+		
+		$stringURL = str_replace(' ', '-', $postvars['title']); // Converts spaces to dashes
+		$stringURL = urlencode($stringURL);
+		
+		$params = array(NULL, $postvars['region'], $postvars['thumb'], $postvars['title'], $stringURL, $postvars['slug'], $postvars['content'], $isfeatured);
+	//	$query = "INSERT INTO tours(id, region, thumb, title, slug, content, isfeatured) VALUES (NULL, '".$postvars['region']."', '".$postvars['thumb']."', '".$postvars['title']."', '".$postvars['slug']."', '".$postvars['content']."', ".$isfeatured.");";
+		$query = "INSERT INTO tours(id, region, thumb, title, titleUrl, slug, content, isfeatured) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+		$result = ExecuteQuery($query, $params);
+		return $result[0];
+	}
+	
+	public function GetDomesticStates(){
+		$returnArray = array();
+		$query = "SELECT * from states where type='Domestic'";
+		$result = ExecuteQuery($query);
+		if ($result[0] && $result[1]->RecordCount() > 0){
+      while(!$result[1]->EOF && $row = $result[1]->GetRowAssoc(false)){
+        $returnArray[] = $row;
+        $result[1]->MoveNext();
+      }
+    }
+		return $returnArray;	
+	}
+	
+	public function GetInternationalStates(){
+		$returnArray = array();
+		$query = "SELECT * from states where type='International'";
+		$result = ExecuteQuery($query);
+		if ($result[0] && $result[1]->RecordCount() > 0){
+      while(!$result[1]->EOF && $row = $result[1]->GetRowAssoc(false)){
+        $returnArray[] = $row;
+        $result[1]->MoveNext();
+      }
+    }
+		return $returnArray;	
+	}
+	
+	public function GetDomesticMenu($state_id){
+		$returnArray = array();
+		$query = "SELECT title, titleUrl FROM `tours` WHERE region='Domestic' and state_id=$state_id";
+		$result = ExecuteQuery($query);
+		if ($result[0] && $result[1]->RecordCount() > 0){
+      while(!$result[1]->EOF && $row = $result[1]->GetRowAssoc(false)){
+        $returnArray[] = $row;
+        $result[1]->MoveNext();
+      }
+    }
+		return $returnArray;
+	}
+	
+	public function GetInternationalMenu($state_id){
+		$returnArray = array();
+		$query = "SELECT title, titleUrl FROM `tours` WHERE region='International' and state_id=$state_id";
+		$result = ExecuteQuery($query);
+		if ($result[0] && $result[1]->RecordCount() > 0){
+      while(!$result[1]->EOF && $row = $result[1]->GetRowAssoc(false)){      
+        $returnArray[] = $row;
+        $result[1]->MoveNext();
+      }
+    }
+		return $returnArray;
+	}
+	
+	public function GetDomesticPost($title){
+		$query = "SELECT content FROM `tours` WHERE titleUrl = ? and region = 'Domestic'";
+		$result = ExecuteQuery($query, array($title));
+		if ($result[0] && $result[1]->RecordCount() > 0 && $row = $result[1]->GetRowAssoc(false)){
+			return $row['content'];	
+		}
+	}
+	
+	public function GetInternationalPost($title){
+		$query = "SELECT content FROM `tours` WHERE titleUrl = ? and region = 'International'";
+		$result = ExecuteQuery($query, array($title));
+		if ($result[0] && $result[1]->RecordCount() > 0 && $row = $result[1]->GetRowAssoc(false)){
+			return $row['content'];	
+		}
+	}
+	
+	public function GetFeaturedTours(){
+		$returnArray = array();
+		$query = "SELECT region, thumb, title, titleUrl, slug FROM `tours` WHERE isfeatured=1";
+		$result = ExecuteQuery($query);
+		if ($result[0] && $result[1]->RecordCount() > 0){
+      while(!$result[1]->EOF && $row = $result[1]->GetRowAssoc(false)){      
+        $returnArray[] = $row;
+        $result[1]->MoveNext();
+      }
+    }
+		return $returnArray;	
+	}
+	
+	public function GetStateList($region){
+		$returnArray = array();
+		$query = "SELECT * from states WHERE type = ?";
+		$parameters = array($region);
+		$result = ExecuteQuery($query, $parameters);
+		if ($result[0] && $result[1]->RecordCount() > 0){
+      while(!$result[1]->EOF && $row = $result[1]->GetRowAssoc(false)){      
+        $returnArray[] = $row;
+        $result[1]->MoveNext();
+      }
+    }
+		return $returnArray;
+	}
+	
+	public function validateStateCreation($postvars){
+		if(!isset($postvars['region']) || !isset($postvars['display_name'])){
+			return false;
+		}
+		return true;
+	}
+	
+	public function saveStateCreation($postvars){
+		
+		$stringURL = str_replace(' ', '-', $postvars['display_name']); // Converts spaces to dashes
+		$stringURL = urlencode($stringURL);
+		
+		$params = array(NULL,$postvars['region'], $postvars['display_name'], $stringURL);
+	//	$query = "INSERT INTO tours(id, region, thumb, title, slug, content, isfeatured) VALUES (NULL, '".$postvars['region']."', '".$postvars['thumb']."', '".$postvars['title']."', '".$postvars['slug']."', '".$postvars['content']."', ".$isfeatured.");";
+		$query = "INSERT INTO states(state_id, type, display_name, url_name) VALUES (NULL, '".$postvars['region']."', '".$postvars['display_name']."', '".$stringURL."');";
+		echo $query;
+		$result = ExecuteQuery($query);
+		return $result;
+	}
+}

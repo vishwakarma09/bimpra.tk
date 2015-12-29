@@ -1,0 +1,134 @@
+<?php 
+class Common_Model extends MY_Model {
+	
+    function __construct()
+    {
+        parent::__construct();
+		$this->file_path = realpath(APPPATH . '../datafiles');
+		$this->banner_path = realpath(APPPATH . '../banners');
+		$this->gallery_path_url = base_url().'datafiles/';
+    }
+
+//
+
+
+    public function insert_data($table,$data1)
+	{   
+		$this->db->insert($table,$data1);
+	}	
+	
+	 public function update_data($table,$data1,$col,$val)
+	{   
+		
+		$this->db->where($col, $val);
+		$this->db->update($table,$data1);
+	}	
+	
+	
+	 public function delete_row($table,$col,$val)
+	{   
+		
+		$this->db->where($col, $val);
+		$this->db->delete($table);
+	}			
+
+
+
+	 public function exist_data($table,$compare)
+	{   
+		
+		$query = $this->db->get_where($table, $compare);
+
+        $count = $query->num_rows(); //counting result from query
+		
+		return $count;
+
+	}			
+
+
+
+
+	public function get_data($table,$fld = "*",$col=NULL,$val=NULL){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->where($col,$val); 
+		}		
+		$query = $this->db->get($table);
+		$row  = $query->result();
+		return $row;
+		}
+		
+		public function get_data_multiple_where($table,$fld = "*",$where){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->where($where); 
+		}		
+		$query = $this->db->get($table);
+		$row  = $query->result();
+		return $row;
+		}
+		
+	public function get_data_array($table,$fld = "*",$col=NULL,$val=NULL){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->where($col,$val); 
+		}
+		$query = $this->db->get($table);
+		$row  = $query->result_array();
+		return $row;
+		}
+	
+	public function get_data_like($table,$fld = "*",$col=NULL,$val=NULL){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->like($col,$val,'both'); 
+		}		
+		$query = $this->db->get($table);
+		$row  = $query->result();
+		return $row;
+		}	
+
+	 function do_upload($new_name = null) {
+	
+		//$this->load->helper(array('form', 'url'));
+
+		$config = array(
+			'allowed_types' => 'csv|docx|txt|doc|xlsx',
+			'upload_path' => $this->file_path,
+			'max_size' => 20000,
+			'file_name' => $new_name
+		);
+		
+		$this->load->library('upload', $config);
+		$this->upload->do_upload();
+		$file_data = $this->upload->data();
+		
+		
+		return $file_data;
+	}
+//
+	
+	
+	 function do_upload_banner() {
+	
+		//$this->load->helper(array('form', 'url'));
+
+		$config = array(
+			'allowed_types' => 'png|jpeg|jpg',
+			'upload_path' => $this->banner_path,
+			'max_size' => 20000
+		);
+		
+		$this->load->library('upload', $config);
+		$this->upload->do_upload();
+		$file_data = $this->upload->data();
+		
+		
+		return $file_data;
+	}
+	
+	}

@@ -1,0 +1,68 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2015-11-30 00:54:26 --> 404 Page Not Found: Connectfacebooknet/en_US
+ERROR - 2015-11-30 00:58:28 --> 404 Page Not Found: Connectfacebooknet/en_US
+ERROR - 2015-11-30 01:13:00 --> 404 Page Not Found: Robotstxt/index
+ERROR - 2015-11-30 04:30:15 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' '3', '0', '0', '0', 0)' at line 1 - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', '3', 4, , '3', '0', '0', '0', 0)
+ERROR - 2015-11-30 04:30:36 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' '3', '0', '0', '0', 0)' at line 1 - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', '3', 4, , '3', '0', '0', '0', 0)
+ERROR - 2015-11-30 04:34:20 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' '3', '0', '0', '0', 0)' at line 1 - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', '3', 4, , '3', '0', '0', '0', 0)
+ERROR - 2015-11-30 04:36:16 --> Query error: Column 'from_date' cannot be null - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', '3', 4, NULL, '3', '0', '0', '0', 0)
+ERROR - 2015-11-30 04:43:17 --> 404 Page Not Found: Common/backend
+ERROR - 2015-11-30 04:43:18 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-11-30 04:43:18 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-11-30 04:45:07 --> 404 Page Not Found: Common/backend
+ERROR - 2015-11-30 04:47:43 --> 404 Page Not Found: Common/backend
+ERROR - 2015-11-30 04:49:51 --> 404 Page Not Found: News/index
+ERROR - 2015-11-30 04:49:51 --> 404 Page Not Found: Indexhtml/index
+ERROR - 2015-11-30 04:59:31 --> Query error: Column 'tid' cannot be null - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0)
+ERROR - 2015-11-30 05:41:50 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-11-30 05:41:50 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-11-30 05:44:13 --> Query error: Column 'tid' cannot be null - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0)
+ERROR - 2015-11-30 06:38:28 --> Severity: Error --> Call to undefined method Common_Model::select_max() /var/www/html/bimpra.tk/application/controllers/Checkout.php 73
+ERROR - 2015-11-30 06:40:29 --> Severity: Notice --> Trying to get property of non-object /var/www/html/bimpra.tk/application/views/front/components/checkout.php 94
+ERROR - 2015-11-30 06:40:31 --> Query error: Column 'tid' cannot be null - Invalid query: INSERT INTO `booking_tours` (`cid`, `tid`, `amount`, `from_date`, `n_ac`, `n_cwb`, `n_cnb`, `n_ic`, `is_paid`) VALUES ('4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0)
+ERROR - 2015-11-30 06:44:17 --> Severity: Error --> Call to undefined method Common_Model::get_max() /var/www/html/bimpra.tk/application/controllers/Checkout.php 73
+ERROR - 2015-11-30 06:48:57 --> Severity: Notice --> Undefined variable: data /var/www/html/bimpra.tk/application/controllers/Checkout.php 142
+ERROR - 2015-11-30 06:48:57 --> Severity: Notice --> Undefined variable: secret_key /var/www/html/bimpra.tk/application/controllers/Checkout.php 142
+ERROR - 2015-11-30 06:48:57 --> Severity: Notice --> Undefined variable: bid /var/www/html/bimpra.tk/application/controllers/Checkout.php 173
+ERROR - 2015-11-30 06:51:01 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/libraries/Admin_Controller.php 18
+ERROR - 2015-11-30 06:51:04 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-11-30 06:51:05 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-11-30 06:52:15 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/libraries/Admin_Controller.php 18
+ERROR - 2015-11-30 06:52:57 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/libraries/Admin_Controller.php 18
+ERROR - 2015-11-30 06:53:00 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/controllers/administrator/Login.php 10
+ERROR - 2015-11-30 06:53:04 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/controllers/administrator/Login.php 10
+ERROR - 2015-11-30 06:53:35 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/controllers/administrator/Login.php 10
+ERROR - 2015-11-30 06:53:37 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/controllers/administrator/Login.php 10
+ERROR - 2015-11-30 06:53:38 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/controllers/administrator/Login.php 10
+ERROR - 2015-11-30 06:53:42 --> Severity: Error --> Call to undefined method Users_Model::isLoggedIn() /var/www/html/bimpra.tk/application/controllers/administrator/Login.php 10
+ERROR - 2015-11-30 06:53:56 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 06:53:56 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 06:53:56 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 06:53:56 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:06:54 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:06:55 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:06:55 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:06:55 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:06:55 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:14:58 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:14:58 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined index: type /var/www/html/bimpra.tk/application/models/Users_model.php 105
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined property: stdClass::$role /var/www/html/bimpra.tk/application/views/admin/include/page_head.php 82
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined property: stdClass::$fld_name /var/www/html/bimpra.tk/application/views/admin/include/page_head.php 95
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined property: stdClass::$fld_name /var/www/html/bimpra.tk/application/views/admin/include/page_head.php 109
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined property: stdClass::$fld_name /var/www/html/bimpra.tk/application/views/admin/include/navigation.php 31
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined variable: count /var/www/html/bimpra.tk/application/views/admin/components/dashboard.php 191
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined variable: count /var/www/html/bimpra.tk/application/views/admin/components/dashboard.php 192
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined variable: count /var/www/html/bimpra.tk/application/views/admin/components/dashboard.php 193
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined variable: count /var/www/html/bimpra.tk/application/views/admin/components/dashboard.php 194
+ERROR - 2015-11-30 07:15:17 --> Severity: Notice --> Undefined variable: count /var/www/html/bimpra.tk/application/views/admin/components/dashboard.php 195
+ERROR - 2015-11-30 07:15:18 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:16:16 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:16:33 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:16:46 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:16:58 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:17:01 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:18:54 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-11-30 07:18:56 --> 404 Page Not Found: Common/backend
+ERROR - 2015-11-30 07:19:02 --> 404 Page Not Found: Common/frontend

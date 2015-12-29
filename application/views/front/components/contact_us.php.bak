@@ -1,0 +1,61 @@
+<div class="clearfix" style="background:#ead6ba;">
+        <div class="container" style="padding:0 30px;">
+            	<br /><br />
+                <h3 style="text-align:center;">Contact Us</h3>
+				<h4 style="text-align:center; color:#B32727;">"Get in Touch"</h4>
+                <div style="color:#777; text-align:center;" >
+					With trained professionals assisting you at every step, you get to explore new destinations or rediscover old favourites like never before. We are happy to help in case you have a query. Just drop us an email or chat with us for to-the-point advice from our travel specialists. You can even submit an enquiry on the Global Travel Help link given below.
+				</div>
+				<div class="gap">
+                <div class="row row-wrap">				
+                    <div class="col-md-12">
+						<div class="col-md-9">
+                        <form class="form-horizontal">
+                         
+                        </form>
+						</div>
+						
+                        <div class="col-md-3" style="color:#555; border:1px solid #999; padding:15px; border-radius:15px; background:#D9EFF6;">
+							<span style="color:#B32727;"><b>EMAIL</b></span><br />info@bimpra.com<br /><br />
+							<span style="color:#B32727;"><b>TELEPHONE</b></span><br />
+							+91 704 27-27-947<br /><br />
+							<!---<span style="color:#B32727;"><b>FAX</b></span><br />
+							+ 91 11 66211168<br /><br />--->
+							<span style="color:#B32727;"><b>ADDRESS</b></span><br /><br />
+							<b>Head office </b><br />
+							 
+							
+							Bimpra Tours And Travels Private Limited<br />
+							914 Regus Business Centre,<br />
+							Sector 49, Sohna Road, <br />
+							Gurgaon 122018, Haryana, INDIA<br />
+							Phone : +91 704 27-27-947<br />
+
+						</div>
+						
+                    </div>
+					
+                    
+                </div>
+            </div>
+			
+            <div class="pagination pagination-centered">
+                    <ul>
+                      <li><a href="#">?</a></li>
+                      <li class="active"><a href="#">1</a></li>
+                      <li class="disabled"><a href="#">...</a></li>
+                      <li><a href="#">10</a></li>
+                      <li><a href="#">?</a></li>
+                    </ul>
+            </div>
+            <div class="row">
+                	<div class="col-lg-12">
+                    	<div class="divider-line">
+                        
+						</div>
+                    </div>
+                </div>
+
+        </div>
+
+        </div>

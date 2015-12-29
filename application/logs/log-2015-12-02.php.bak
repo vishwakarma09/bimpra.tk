@@ -1,0 +1,58 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2015-12-02 00:16:22 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 01:26:24 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 01:33:17 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 01:33:17 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 01:33:23 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 01:38:54 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 01:40:59 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 01:41:20 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 01:41:30 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 01:41:37 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 01:41:43 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 03:43:38 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 03:44:51 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 03:45:59 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 03:50:08 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 03:56:12 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 03:56:21 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:06:03 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:25:14 --> Query error: Duplicate entry '565eb47246748' for key 'PRIMARY' - Invalid query: INSERT INTO `citrus_tx` (`TxId`, `TxStatus`, `amount`, `pgTxnNo`, `issuerRefNo`, `authIdCode`, `firstName`, `lastName`, `pgRespCode`, `addressZip`, `service`, `id`) VALUES ('565eb47246748', 'CANCELED', '5.00', 'CTX1512020906322595666', '', '', 'Sandeep', 'Kumar', '3', '', 'Tour', '25')
+ERROR - 2015-12-02 04:25:26 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:25:47 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:26:23 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:26:37 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:27:14 --> Query error: Duplicate entry '565eb942a9e7b' for key 'PRIMARY' - Invalid query: INSERT INTO `citrus_tx` (`TxId`, `TxStatus`, `amount`, `pgTxnNo`, `issuerRefNo`, `authIdCode`, `firstName`, `lastName`, `pgRespCode`, `addressZip`, `service`, `id`) VALUES ('565eb942a9e7b', 'CANCELED', '1.00', 'CTX1512020927041209878', '', '', 'Sandeep', 'Kumar', '3', '', 'Tour', '26')
+ERROR - 2015-12-02 04:31:06 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:31:21 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:36:25 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 04:57:26 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 05:25:33 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 06:03:33 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 06:08:56 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 06:24:30 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 06:27:12 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 06:43:20 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 06:57:55 --> Severity: Parsing Error --> syntax error, unexpected '}' /var/www/html/bimpra.tk/application/controllers/Checkout.php 23
+ERROR - 2015-12-02 07:01:16 --> Severity: Notice --> Undefined variable: pageTitle /var/www/html/bimpra.tk/application/views/front/include/page_head.php 5
+ERROR - 2015-12-02 07:07:21 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:07:41 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:16:55 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:18:36 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:21:30 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:23:20 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:33:21 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:40:53 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:41:37 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 07:47:15 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 08:04:12 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 08:08:46 --> 404 Page Not Found: Common/backend
+ERROR - 2015-12-02 10:31:15 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 10:31:15 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 11:26:40 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 11:26:40 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 11:43:04 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 11:44:22 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 13:24:05 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-02 13:24:05 --> 404 Page Not Found: Faviconico/index

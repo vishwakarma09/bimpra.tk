@@ -1,0 +1,203 @@
+<?php 
+class Common_Model extends MY_Model {
+	
+    function __construct()
+    {
+        parent::__construct();
+		$this->file_path = realpath(APPPATH . '../datafiles');
+		$this->banner_path = realpath(APPPATH . '../banners');
+		$this->gallery_path_url = base_url().'datafiles/';
+    }
+
+//
+
+
+    public function insert_data($table,$data1)
+	{   
+		$this->db->insert($table,$data1);
+	}	
+	
+	 public function update_data($table,$data1,$col,$val)
+	{   
+		
+		$this->db->where($col, $val);
+		$this->db->update($table,$data1);
+	}	
+	
+	
+	 public function delete_row($table,$col,$val)
+	{   
+		
+		$this->db->where($col, $val);
+		$this->db->delete($table);
+	}			
+
+
+
+	 public function exist_data($table,$compare)
+	{   
+		
+		$query = $this->db->get_where($table, $compare);
+
+        $count = $query->num_rows(); //counting result from query
+		
+		return $count;
+
+	}			
+
+
+
+
+	public function get_data($table,$fld = "*",$col=NULL,$val=NULL){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->where($col,$val); 
+		}		
+		$query = $this->db->get($table);
+		$row  = $query->result();
+		return $row;
+		}
+		
+		public function get_data_multiple_where($table,$fld = "*",$where){
+		$this->db->select($fld);
+		$this->db->where($where); 
+		$query = $this->db->get($table);
+		$row  = $query->result();
+		return $row;
+		}
+		
+	public function get_data_array($table,$fld = "*",$col=NULL,$val=NULL){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->where($col,$val); 
+		}
+		$query = $this->db->get($table);
+		$row  = $query->result_array();
+		return $row;
+		}
+	
+	public function get_data_like($table,$fld = "*",$col=NULL,$val=NULL){
+		$this->db->select($fld);
+		
+		if($col != NULL){ 
+		$this->db->like($col,$val,'both'); 
+		}		
+		$query = $this->db->get($table);
+		$row  = $query->result();
+		return $row;
+		}	
+
+	 function do_upload($new_name = null) {
+	
+		//$this->load->helper(array('form', 'url'));
+
+		$config = array(
+			'allowed_types' => 'csv|docx|txt|doc|xlsx',
+			'upload_path' => $this->file_path,
+			'max_size' => 20000,
+			'file_name' => $new_name
+		);
+		
+		$this->load->library('upload', $config);
+		$this->upload->do_upload();
+		$file_data = $this->upload->data();
+		
+		
+		return $file_data;
+	}
+//
+	
+	
+	 function do_upload_banner() {
+	
+		//$this->load->helper(array('form', 'url'));
+
+		$config = array(
+			'allowed_types' => 'png|jpeg|jpg',
+			'upload_path' => $this->banner_path,
+			'max_size' => 20000
+		);
+		
+		$this->load->library('upload', $config);
+		$this->upload->do_upload();
+		$file_data = $this->upload->data();
+		
+		
+		return $file_data;
+	}
+	
+	
+	public do_upload_thumbnail()
+	{
+		// Get configuartion data (we fill up 2 arrays - $config and $conf)
+		
+		$conf['img_path']			= $this->config->item('img_path');
+		$conf['allow_resize']		= $this->config->item('allow_resize');
+		
+		$config['allowed_types']	= $this->config->item('allowed_types');
+		$config['max_size']			= $this->config->item('max_size');
+		$config['encrypt_name']		= $this->config->item('encrypt_name');
+		$config['overwrite']		= $this->config->item('overwrite');
+		$config['upload_path']		= $this->config->item('upload_path');
+		
+		if (!$conf['allow_resize'])
+		{
+			$config['max_width']	= $this->config->item('max_width');
+			$config['max_height']	= $this->config->item('max_height');
+		}
+		else
+		{
+			$conf['max_width']		= $this->config->item('max_width');
+			$conf['max_height']		= $this->config->item('max_height');
+			
+			if ($conf['max_width'] == 0 and $conf['max_height'] == 0)
+			{
+				$conf['allow_resize'] = FALSE;
+			}
+		}
+		
+		
+		// Load uploader
+		$this->load->library('upload', $config);
+		
+		if ($this->upload->do_upload()) // Success
+		{
+			// General result data
+			$result = $this->upload->data();
+			
+			// Shall we resize an image?
+			if ($conf['allow_resize'] and $conf['max_width'] > 0 and $conf['max_height'] > 0 and (($result['image_width'] > $conf['max_width']) or ($result['image_height'] > $conf['max_height'])))
+			{				
+				// Resizing parameters
+				$resizeParams = array
+				(
+					'source_image'	=> $result['full_path'],
+					'new_image'		=> $result['full_path'],
+					'width'			=> $conf['max_width'],
+					'height'		=> $conf['max_height']
+				);
+				
+				// Load resize library
+				$this->load->library('image_lib', $resizeParams);
+				
+				// Do resize
+				$this->image_lib->resize();
+			}
+			
+			// Add our stuff
+			$result['result']		= "file_uploaded";
+			$result['resultcode']	= 'ok';
+			$result['file_name']	= site_url() . $conf['img_path'] . '/' . $result['file_name'];
+		}
+		else // Failure
+		{
+			// Compile data for output
+			$result['result']		= $this->upload->display_errors(' ', ' ');
+			$result['resultcode']	= 'failure';
+		}
+		return $result;
+	}
+	
+}
