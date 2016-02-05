@@ -27,3 +27,7 @@ ERROR - 2015-12-29 17:48:22 --> Severity: Notice --> Undefined property: stdClas
 ERROR - 2015-12-29 17:48:22 --> Severity: Notice --> Undefined property: stdClass::$profile_pic C:\xampp\htdocs\bimpra.tk\application\views\admin\include\navigation.php 17
 ERROR - 2015-12-29 17:48:22 --> 404 Page Not Found: Common/frontend
 ERROR - 2015-12-29 17:48:22 --> 404 Page Not Found: Common/frontend
+ERROR - 2015-12-29 22:07:54 --> 404 Page Not Found: Newsz/index
+ERROR - 2015-12-29 22:07:54 --> 404 Page Not Found: Faviconico/index
+ERROR - 2015-12-29 22:07:57 --> 404 Page Not Found: News/index
+ERROR - 2015-12-29 22:09:44 --> 404 Page Not Found: News/index
